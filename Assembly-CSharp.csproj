@@ -56,10 +56,12 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ScriptNet\PlayerNet.cs" />
     <Compile Include="Assets\GeneticManager.cs" />
     <Compile Include="Assets\NNet.cs" />
     <Compile Include="Assets\Submarine.cs" />
-    <Compile Include="Assets\ScriptNet\PlayerNet.cs" />
+    <Compile Include="Assets\ScriptNet\Bomb.cs" />
+    <Compile Include="Assets\ScriptNet\Racket.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />
@@ -305,9 +307,6 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.43f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
-    <Reference Include="MathNet.Numerics">
-      <HintPath>Assets\Plugins\MathNet.Numerics.dll</HintPath>
-    </Reference>
     <Reference Include="Mono.CecilX.Rocks">
       <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Rocks.dll</HintPath>
     </Reference>
@@ -319,6 +318,9 @@
     </Reference>
     <Reference Include="Mono.CecilX.Mdb">
       <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics">
+      <HintPath>Assets\Plugins\MathNet.Numerics.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.43f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -761,37 +763,33 @@
       <Project>{1360C4F5-CC57-376A-7353-89283220C7D1}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
+    <ProjectReference Include="Mirror.csproj">
+      <Project>{2201489E-A7EA-8CC7-4607-43E6AD70D945}</Project>
+      <Name>Mirror</Name>
+    </ProjectReference>
     <ProjectReference Include="kcp2k.csproj">
       <Project>{06BFB30C-3A2E-4CA3-D2D4-36229CCF80C3}</Project>
       <Name>kcp2k</Name>
-    </ProjectReference>
-    <ProjectReference Include="Mirror.Editor.csproj">
-      <Project>{63DA1344-34C3-0F82-211A-AA0D68B1A82C}</Project>
-      <Name>Mirror.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Telepathy.csproj">
-      <Project>{A94F07CD-CAB6-078C-F9C4-5F74F8309712}</Project>
-      <Name>Telepathy</Name>
-    </ProjectReference>
-    <ProjectReference Include="Mirror.Components.csproj">
-      <Project>{D7FED790-99E1-4855-6777-25C294600E73}</Project>
-      <Name>Mirror.Components</Name>
-    </ProjectReference>
-    <ProjectReference Include="Mirror.Examples.csproj">
-      <Project>{58E1C11F-D0D9-3B24-F70F-F59665C63F72}</Project>
-      <Name>Mirror.Examples</Name>
-    </ProjectReference>
-    <ProjectReference Include="MultiplexTransport.csproj">
-      <Project>{7F1B8E0E-77F5-7495-7030-51F2C66A5CB6}</Project>
-      <Name>MultiplexTransport</Name>
     </ProjectReference>
     <ProjectReference Include="MiddlewareTransport.csproj">
       <Project>{89A9B95F-8055-1F0E-E317-BFA17AE4EDA2}</Project>
       <Name>MiddlewareTransport</Name>
     </ProjectReference>
+    <ProjectReference Include="Mirror.Examples.csproj">
+      <Project>{58E1C11F-D0D9-3B24-F70F-F59665C63F72}</Project>
+      <Name>Mirror.Examples</Name>
+    </ProjectReference>
     <ProjectReference Include="Mirror.Transports.csproj">
       <Project>{782B44A8-9EE1-BB11-F31C-9057AAA1C815}</Project>
       <Name>Mirror.Transports</Name>
+    </ProjectReference>
+    <ProjectReference Include="Mirror.Editor.csproj">
+      <Project>{63DA1344-34C3-0F82-211A-AA0D68B1A82C}</Project>
+      <Name>Mirror.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="MultiplexTransport.csproj">
+      <Project>{7F1B8E0E-77F5-7495-7030-51F2C66A5CB6}</Project>
+      <Name>MultiplexTransport</Name>
     </ProjectReference>
     <ProjectReference Include="Mirror.CompilerSymbols.csproj">
       <Project>{DEF5DA8C-E212-64AB-DF22-046C79232DE2}</Project>
@@ -801,13 +799,17 @@
       <Project>{B854FEA9-708F-5728-7BFA-1E339412D202}</Project>
       <Name>Mirror.Authenticators</Name>
     </ProjectReference>
-    <ProjectReference Include="Mirror.csproj">
-      <Project>{2201489E-A7EA-8CC7-4607-43E6AD70D945}</Project>
-      <Name>Mirror</Name>
+    <ProjectReference Include="Telepathy.csproj">
+      <Project>{A94F07CD-CAB6-078C-F9C4-5F74F8309712}</Project>
+      <Name>Telepathy</Name>
     </ProjectReference>
     <ProjectReference Include="SimpleWebTransport.csproj">
       <Project>{88B745F4-868E-50AB-E677-D681A77C72D6}</Project>
       <Name>SimpleWebTransport</Name>
+    </ProjectReference>
+    <ProjectReference Include="Mirror.Components.csproj">
+      <Project>{D7FED790-99E1-4855-6777-25C294600E73}</Project>
+      <Name>Mirror.Components</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
