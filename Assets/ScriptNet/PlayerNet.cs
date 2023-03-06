@@ -13,9 +13,26 @@ public class PlayerNet : NetworkBehaviour
     public float speed = 30f;
     private void Start()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y-5, transform.position.z);
         rigidbody2D = GetComponent<Rigidbody2D>();
-        //BattleShip.SetActive(false);
+
+        Debug.Log("isClientOnly" + isClientOnly);
+        Debug.Log("isServerOnly" + isServerOnly);
+        Debug.Log("isClient" + isClient);
+        Debug.Log("SERVER"+ isServer);
+        if (isServerOnly)
+        {
+
+            BattleShip.SetActive(true);
+            SpiteSubmarine.SetActive(false);
+            transform.position = new Vector3(transform.position.x, transform.position.y+1.5f, transform.position.z);
+        }
+        else {
+            BattleShip.SetActive(false);
+            SpiteSubmarine.SetActive(true);
+            transform.position = new Vector3(transform.position.x, transform.position.y-2, transform.position.z);
+        }
+
+        //BattleShip.SetActive(false);isClientisServerOnly   isClientOnly
     }
     void HandleMovement()
     {
@@ -46,11 +63,17 @@ public class PlayerNet : NetworkBehaviour
     }
     public override void OnStartLocalPlayer()
     {
-        BattleShip.SetActive(true);
-        SpiteSubmarine.SetActive(false);
-       transform.position = new Vector3(transform.position.x-8, transform.position.y+6.7f, transform.position.z);
-        //SpiteSubmarine.GetComponent<SpriteRenderer>().color = Color.red;
-        base.OnStartLocalPlayer();
-    }
+        //BattleShip.SetActive(false);
+        //SpiteSubmarine.SetActive(true);
+        //transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        if (isServer)
+        {
+            //BattleShip.SetActive(true);
+            //SpiteSubmarine.SetActive(false);
+            //transform.position = new Vector3(transform.position.x, transform.position.y + 6.7f, transform.position.z);
+            //SpiteSubmarine.GetComponent<SpriteRenderer>().color = Color.red;
+            base.OnStartLocalPlayer();
+        } 
+    } 
 
 }
