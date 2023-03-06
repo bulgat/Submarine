@@ -15,24 +15,34 @@ public class PlayerNet : NetworkBehaviour
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
 
-        Debug.Log("isClientOnly" + isClientOnly);
-        Debug.Log("isServerOnly" + isServerOnly);
-        Debug.Log("isClient" + isClient);
-        Debug.Log("SERVER"+ isServer);
-        if (isServerOnly)
-        {
+        
 
+        Debug.Log(netIdentity.netId+" isClientOnly =" + isClientOnly);
+        Debug.Log(netIdentity.netId + " isServerOnly =" + isServerOnly);
+        Debug.Log(netIdentity.netId + " isClient =" + isClient);
+        Debug.Log(netIdentity.netId + " SERVER =" + isServer);
+        Debug.Log(netIdentity.netId + " connectionToServer =" + connectionToServer);
+        Debug.Log(netIdentity.netId + " connectionToClient =" + connectionToClient);
+        Debug.Log(netIdentity.isServer + " =====  netIdentity.isServer = " + netIdentity.isClientOnly);
+        Debug.Log(netIdentity.isLocalPlayer + " =====  isOwned = " + netIdentity.isOwned);
+
+        //netIdentity.isLocalPlayer
+        if (netIdentity.isLocalPlayer)
+        {
+            Debug.Log(netIdentity.netId + " ZZZ SERVER = BattleShip = " + isServerOnly);
             BattleShip.SetActive(true);
             SpiteSubmarine.SetActive(false);
-            transform.position = new Vector3(transform.position.x, transform.position.y+1.5f, transform.position.z);
+            //transform.position = new Vector3(transform.position.x, transform.position.y+1.5f, transform.position.z);
         }
-        else {
+        else 
+        {
+            Debug.Log(netIdentity.netId + " ZZZ SERVER = Submarine = " + isServerOnly);
             BattleShip.SetActive(false);
             SpiteSubmarine.SetActive(true);
-            transform.position = new Vector3(transform.position.x, transform.position.y-2, transform.position.z);
+           // transform.position = new Vector3(transform.position.x, transform.position.y-2, transform.position.z);
         }
 
-        //BattleShip.SetActive(false);isClientisServerOnly   isClientOnly
+        //BattleShip connectionToServer  connectionToClient
     }
     void HandleMovement()
     {
@@ -60,9 +70,16 @@ public class PlayerNet : NetworkBehaviour
     void Update()
     {
         HandleMovement();
+
+        
     }
     public override void OnStartLocalPlayer()
     {
+        Debug.Log("  NetworkServer = " + NetworkServer.connections.Count);
+        if (NetworkServer.connections.Count >= 2)
+        {
+            //rigidbody2D.transform.position =NetworkStartPosition.
+        }
         //BattleShip.SetActive(false);
         //SpiteSubmarine.SetActive(true);
         //transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
@@ -74,6 +91,10 @@ public class PlayerNet : NetworkBehaviour
             //SpiteSubmarine.GetComponent<SpriteRenderer>().color = Color.red;
             base.OnStartLocalPlayer();
         } 
-    } 
+    }
+    public override void OnDeserialize(NetworkReader reader, bool initialState)
+    {
+        base.OnDeserialize(reader, initialState);
+    }
 
 }
