@@ -53,8 +53,9 @@ public class PlayerNet : NetworkBehaviour
             Vector3 move = new Vector3(moveX, moveY,0);
             //transform.position = transform.position + move;
             //Debug.Log("START");
-            rigidbody2D.MovePosition(rigidbody2D.position+Vector2.right* moveX* speed* Time.deltaTime);
+            rigidbody2D.MovePosition(rigidbody2D.position+Vector2.right* moveX* speed);
 
+           // Time.deltaTime
             if (Input.GetKeyDown("space"))
             {
                 var bombOne = Instantiate(BombPrefab, 

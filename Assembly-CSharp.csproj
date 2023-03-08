@@ -61,9 +61,9 @@
     <Compile Include="Assets\ScriptNet\PlayerNet.cs" />
     <Compile Include="Assets\ScriptNet\CustomNetworkManager.cs" />
     <Compile Include="Assets\GeneticManager.cs" />
+    <Compile Include="Assets\ScriptNet\MainScene.cs" />
     <Compile Include="Assets\NNet.cs" />
     <Compile Include="Assets\Submarine.cs" />
-    <Compile Include="Assets\ScriptNet\MainScene.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />
