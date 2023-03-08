@@ -90,11 +90,13 @@ public class PlayerNet : NetworkBehaviour
     public void RpcGlobalMoney()
     {
         manager.GlobalMoney += 1;
+        manager.seaModel.SetStep(1);
     }
     [Command]
     public void CommandGlobalMoney()
     {
         manager.GlobalMoney += 1;
+        manager.seaModel.SetStep(1);
     }
 
     void Update()
