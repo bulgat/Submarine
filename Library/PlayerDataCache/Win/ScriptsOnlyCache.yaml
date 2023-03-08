@@ -2,10 +2,12 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - Bomb
+    - GameManager
     - MainScene
     - PlayerNet
     - Racket
     Mirror.Components.dll:
+    - Mirror.Experimental.NetworkRigidbody2D
     - Mirror.NetworkTransform
     Mirror.Transports.dll:
     - Mirror.TelepathyTransport
@@ -64,21 +66,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1466}
     - Class: 114
-      Script: {instanceID: 1666}
+      Script: {instanceID: 1896}
     - Class: 114
-      Script: {instanceID: 1894}
+      Script: {instanceID: 2298}
     - Class: 114
-      Script: {instanceID: 2296}
+      Script: {instanceID: 2764}
     - Class: 114
-      Script: {instanceID: 2762}
+      Script: {instanceID: 2836}
     - Class: 114
-      Script: {instanceID: 2834}
+      Script: {instanceID: 2944}
     - Class: 114
-      Script: {instanceID: 2942}
+      Script: {instanceID: 3048}
     - Class: 114
-      Script: {instanceID: 3046}
+      Script: {instanceID: 3460}
     - Class: 114
-      Script: {instanceID: 3458}
+      Script: {instanceID: 5482}
+    - Class: 114
+      Script: {instanceID: 26492}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -119,19 +123,21 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1666}
+      Script: {instanceID: 1668}
     - Class: 114
-      Script: {instanceID: 1878}
+      Script: {instanceID: 1880}
     - Class: 114
-      Script: {instanceID: 2340}
+      Script: {instanceID: 2342}
     - Class: 114
-      Script: {instanceID: 3720}
+      Script: {instanceID: 3722}
     - Class: 114
-      Script: {instanceID: 5240}
+      Script: {instanceID: 5242}
     - Class: 114
-      Script: {instanceID: 5480}
+      Script: {instanceID: 5440}
     - Class: 114
-      Script: {instanceID: 5660}
+      Script: {instanceID: 5482}
+    - Class: 114
+      Script: {instanceID: 5662}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -391,7 +397,7 @@ ScriptsOnlyBuild:
     className: Text
   - hash:
       serializedVersion: 2
-      Hash: 70442fc06c7a4c938c4a84f7dfa6b9a5
+      Hash: 31efafb4ef044612a60c6ecbe43aef27
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerNet
@@ -1307,6 +1313,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: 
     className: kol
+  - hash:
+      serializedVersion: 2
+      Hash: 876ac6baa372955209163eb585d85748
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameManager
   platform: 5
   scenePathNames:
   - Assets/Scenes/UIscene.unity

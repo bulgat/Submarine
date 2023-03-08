@@ -64,6 +64,7 @@
     <Compile Include="Assets\ScriptNet\MainScene.cs" />
     <Compile Include="Assets\NNet.cs" />
     <Compile Include="Assets\Submarine.cs" />
+    <Compile Include="Assets\ScriptNet\GameManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />
