@@ -72,13 +72,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2762}
     - Class: 114
-      Script: {instanceID: 2940}
+      Script: {instanceID: 2834}
     - Class: 114
-      Script: {instanceID: 3044}
+      Script: {instanceID: 2942}
     - Class: 114
-      Script: {instanceID: 3456}
+      Script: {instanceID: 3046}
     - Class: 114
-      Script: {instanceID: 18102}
+      Script: {instanceID: 3458}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -125,13 +125,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2340}
     - Class: 114
-      Script: {instanceID: 3718}
+      Script: {instanceID: 3720}
     - Class: 114
-      Script: {instanceID: 5238}
+      Script: {instanceID: 5240}
     - Class: 114
-      Script: {instanceID: 5478}
+      Script: {instanceID: 5480}
     - Class: 114
-      Script: {instanceID: 5658}
+      Script: {instanceID: 5660}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -479,6 +479,12 @@ ScriptsOnlyBuild:
     assemblyName: SimpleWebTransport.dll
     namespaceName: Mirror.SimpleWeb
     className: SimpleWebTransport
+  - hash:
+      serializedVersion: 2
+      Hash: 254450cc74c81c2c18428ca7383346b2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MainScene
   - hash:
       serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
@@ -1301,12 +1307,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: 
     className: kol
-  - hash:
-      serializedVersion: 2
-      Hash: 254450cc74c81c2c18428ca7383346b2
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: MainScene
   platform: 5
   scenePathNames:
   - Assets/Scenes/UIscene.unity
